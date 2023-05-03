@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-expand-lg sticky-top text-light py-4 bg-info bg-gradient" >
+    <div class="container " >
+        
+      <a class="navbar-brand  text-white fs-5 mx-5 fw-semibold" href="#" id="main-logo"><i class="fa-solid fa-test"></i>Mtihan</a>
+      <ul class="navbar-nav ms-auto my-lg-1 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active me-4  text-white fs-5 fw-semibold" aria-current="page" [routerLink]="['']">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active px-4 text-white fs-5  fw-semibold" [routerLink]="['']">Training</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active px-4 text-white fs-5  fw-semibold" [routerLink]="['/exam']">Exam</a>
+        </li>
+        </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"   id="main-menu">
+        <ul class="navbar-nav ms-auto my-lg-1 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          
+            <!-- Authentication Links -->
+                    <li class="nav-item">
+                        <a class="nav-link me-4 text-white fs-5  fw-semibold" [routerLink]="['/login']">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4 text-white fs-5  fw-semibold"  [routerLink]="['/register']">Register</a>
+                    </li>
+    
+       
+              
+        
+        </ul>
+
+       
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+

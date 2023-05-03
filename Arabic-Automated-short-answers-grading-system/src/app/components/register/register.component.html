@@ -1,0 +1,45 @@
+<div class="banner ">
+    <video autoplay loop muted class="myvideo" > 
+        <source src="../../../assets/studying.mp4" type="video/mp4">
+    </video>
+
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+   <!--[formGroup]="registerForm" (ngSubmit)="submitSignup()"-->
+                <form>
+                    <h3 id="logo">Create Account</h3>
+                    <div class="form-group mb-3">
+                      <label  class="form-label fs-5 fw-semibold text-dark">Name</label>
+                      <input type="text" class="form-control bg-light ps-3" name="name" id="name"  >
+                    </div>
+                    
+
+                    <div class=" form-group mb-3">
+                        <label  class="form-label fs-5 fw-semibold text-dark">Email address</label>
+                        <input type="email" class="form-control bg-light ps-3" name="email" id="email"  >
+                    </div>
+                    <div class="form-group mb-3">
+                        <label  class="form-label fs-5 fw-semibold text-dark">Password</label>
+                        <input type="password" class="form-control bg-light ps-3" name="password" id="password"  >
+                    </div>
+                   
+
+                   <div class="form-group mb-3">
+                        <label  class="form-label fs-5 fw-semibold text-dark">Confirm Password</label>
+                        <input type="password" class="form-control bg-light ps-3" name="Cpassword" id="Cpassword"  >
+                    </div> 
+                   
+                    <button type="submit" id="create" class="btn btn-primary my-2 px-3 btn-lg">Create</button>
+                    <a routerLink="/login" class="nav-link text-center text-dark fw-bold fs-5">Login to an Existing Account</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--********************************************************************************************************-->
+
+        
+

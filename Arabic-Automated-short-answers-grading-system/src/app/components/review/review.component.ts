@@ -52,11 +52,11 @@ export class ReviewComponent {
     this.totalScore = this.grades.reduce((total, grade) => total + grade.score, 0);
   }
   getQuestionText(questionId: number): string {
-    return this.questions.find(question => question.id === questionId)?.text || '';
+    return this.questions.find(question => question.id === questionId)?.text_question || '';
   }
 
   getAnswerText(answerId: number): string {
-    return this.answers.find(answer => answer.answerId === answerId)?.text_Ans || '';
+    return this.answers.find(answer => answer.answerId === answerId)?.text_answer || '';
   }
   
 }

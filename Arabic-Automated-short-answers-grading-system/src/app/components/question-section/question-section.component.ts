@@ -19,7 +19,7 @@ export class QuestionSectionComponent {
   currentQuestionIndex = 0;  
   isFinished=false; // // finished test Visibility
   currentQuestion: any; // or define a more specific type for the questions array
-  currentAnswer: Answer = {answerId:0, questionId: 0, text_Ans: '' };
+  currentAnswer: Answer = {answerId:0, questionId: 0, text_answer: '' };
   questions: any =  [
     { id: 1,
     text: 'ffffffffffffffff',
@@ -65,7 +65,7 @@ export class QuestionSectionComponent {
         if (this.currentQuestionIndex < this.questions.length-1) {
           this.currentQuestionIndex++;
           this.currentQuestion = this.questions[this.currentQuestionIndex];
-          this.currentAnswer = { answerId:this.currentQuestion.id ,questionId: this.currentQuestion.id, text_Ans: '' };
+          this.currentAnswer = { answerId:this.currentQuestion.id ,questionId: this.currentQuestion.id, text_answer: '' };
         } else {
           console.log('All answers submitted!');
           this.isTestVisible = false;
@@ -77,8 +77,8 @@ export class QuestionSectionComponent {
     if (this.currentQuestionIndex <this.questions.length-1) {
       this.currentQuestionIndex++;
       this.currentQuestion = this.questions[this.currentQuestionIndex];
-      this.currentAnswer = { answerId:this.currentQuestion.id ,questionId: this.currentQuestion.id, text_Ans: '' };
-      this.currentAnswer.text_Ans = ''; // clear the answer textarea
+      this.currentAnswer = { answerId:this.currentQuestion.id ,questionId: this.currentQuestion.id, text_answer: '' };
+      this.currentAnswer.text_answer = ''; // clear the answer textarea
 
     } else {
       console.log('No more questions!');

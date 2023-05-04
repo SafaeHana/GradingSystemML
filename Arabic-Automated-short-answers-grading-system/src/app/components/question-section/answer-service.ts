@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Answer } from '../interfaces/answer';
+import { API_URL } from 'src/env';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnswerService {
-  private submitAnswersUrl = 'api/submitAnswers'; // safae dont forget to modify URL to match your backend API
-  private fetchAnswersUrl = 'api/fetchAnswers'; // safae dont forget to modify URL to match your backend API
-
+  private submitAnswersUrl =  `${API_URL}/answers`;
+  private fetchAnswersUrl =  `${API_URL}/answers`; 
+ 
   constructor(private http: HttpClient) { }
 
   submitAnswers(answers: Answer[]): Observable<any> {

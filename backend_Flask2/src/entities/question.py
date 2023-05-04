@@ -4,33 +4,26 @@ from sqlalchemy import Column, String, ForeignKey, Integer
 
 from .entity import Entity, Base
 from sqlalchemy.orm import relationship
+from marshmallow import Schema, fields
+from . import answer
+from . import grade
 
 
 class Question(Entity, Base):
     __tablename__ = 'questions'
     text_question = Column(String(255))
-    answers = relationship("Answer", backref="question")
-    grades = relationship("Grade", backref="question")
+
+    answers = relationship("Answer", backref="questions")
+    grades = relationship("Grade", backref="questions")
 
     def __init__(self, text_question, created_by):
         Entity.__init__(self, created_by)
         self.text_question = text_question
 
 
-class Answer(Entity, Base):
-    __tablename__ = 'answers'
-    id = Column(Integer, primary_key=True)
-    text_answer = Column(String(255))
-    question_id = Column(Integer, ForeignKey('questions.id'))
-
-    def __init__(self, text_answer, created_by, question_id):
-        Entity.__init__(self, created_by)
-        self.text_answer = text_answer
-        self.question_id = question_id
-
-
-class Grade(Entity, Base):
-    __tablename__ = 'grades'
-    id = Column(Integer, primary_key=True)
-    answer_id = Column(Integer, ForeignKey('questions.id'))
-    score = Column(Integer)
+class QuestionSchema(Schema):
+    id = fields.Number()
+    text_question = fields.Str()
+    created_at = fields.DateTime()
+    updated_at = fields.DateTime()
+    last_updated_by = fields.Str()

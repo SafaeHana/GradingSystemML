@@ -1,5 +1,5 @@
 export interface Question {
     id : number;
-    text : string;
-    answer: string ;
+    text_question : string;
+    
 }

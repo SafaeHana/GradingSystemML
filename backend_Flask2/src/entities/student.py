@@ -18,17 +18,16 @@ class Student(Entity, Base):
     answers = relationship("Answer", backref="students")
     grades = relationship("Grade", backref="students")
 
-    def __init__(self, text_question, created_by):
-        Entity.__init__(self, created_by)
+    def __init__(self, first_name,last_name,email):
+        Entity.__init__(self)
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
 
 class StudentSchema(Schema):
-    id = fields.Number()
+    id = fields.Integer()
     first_name = fields.Str()
     last_name=fields.Str()
     email=fields.Str()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
-    last_updated_by = fields.Str()

@@ -28,7 +28,8 @@ def fetchQuestions():
 
     # serializing as JSON
     session.close()
-    return jsonify(questions.data)
+    return jsonify(questions)
+
 @app.route('/questions', methods=['POST'])
 def submitQuestions():
     # mount Question object
@@ -55,30 +56,29 @@ def fetchAnswers():
 
     # transforming into JSON-serializable objects
     schema = AnswerSchema(many=True)
-    answers = schema.dump(answer_objects)
+    answers = schema.dump(Answer_objects)
 
     # serializing as JSON
     session.close()
-    return jsonify(answers.data)
+    return jsonify(answers)
 
 
 @app.route('/answers', methods=['POST'])
 def submitAnswers():
     # mount answer object
-    posted_answer = AnswerSchema(only=('text_answer', 'question_id'))\
-        .load(request.get_json())
+    posted_answer = AnswerSchema(only=('text_answer', 'question_id', 'student_id')).load(request.get_json(), many=False)
 
-    answer = Answer(**posted_answer.data, created_by="HTTP post request")
+    answer = Answer(**posted_answer)
 
-    # persist answer
     session = Session()
     session.add(answer)
     session.commit()
 
     # return created answer
-    new_answer = AnswerSchema().dump(answer).data
+    answer_schema = AnswerSchema()
+    response = answer_schema.dump(answer)
     session.close()
-    return jsonify(new_answer), 201
+    return jsonify(response), 201
 #--------------------------------------------------------grades----------------------------------------------------------------
 def fetchGrades():
     # fetching from the database
@@ -87,8 +87,8 @@ def fetchGrades():
 
     # transforming into JSON-serializable objects
     schema = GradeSchema(many=True)
-    grades = schema.dump(grade_objects)
+    grades = schema.dump(Grade_objects)
 
     # serializing as JSON
     session.close()
-    return jsonify(grades.data)
+    return jsonify(grades)

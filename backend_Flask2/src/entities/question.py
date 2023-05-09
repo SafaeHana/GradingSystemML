@@ -14,10 +14,9 @@ class Question(Entity, Base):
     text_question = Column(String(255))
 
     answers = relationship("Answer", backref="questions")
-    grades = relationship("Grade", backref="questions")
 
-    def __init__(self, text_question, created_by):
-        Entity.__init__(self, created_by)
+    def __init__(self, text_question):
+        Entity.__init__(self)
         self.text_question = text_question
 
 
@@ -26,4 +25,3 @@ class QuestionSchema(Schema):
     text_question = fields.Str()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
-    last_updated_by = fields.Str()

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Grade } from '../interfaces/grade';
+import { Grade } from '../interfaces/grade.model';
 import { API_URL } from 'src/env';
 
 @Injectable({

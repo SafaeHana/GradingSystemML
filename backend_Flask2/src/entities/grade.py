@@ -14,21 +14,20 @@ from . import student
 class Grade(Entity, Base):
     __tablename__ = 'grades'
     id = Column(Integer, primary_key=True)
-    question_id = Column(Integer, ForeignKey('questions.id'))
+    answer_id = Column(Integer, ForeignKey('answers.id'))
     student_id = Column(Integer, ForeignKey('students.id'))
     score = Column(Integer)
 
-    def __init__(self, score, created_by, question_id, student_id):
-        Entity.__init__(self, created_by)
+    def __init__(self, score, answer_id, student_id):
+        Entity.__init__(self)
         self.score = score
-        self.question_id = question_id
+        self.answer_id = answer_id
         self.student_id= student_id
 
 class GradeSchema(Schema):
-    id = fields.Number()
-    student_id= fields.Number()
-    score=fields.Number()
-    question_id=fields.Number()
+    id = fields.Integer()
+    student_id= fields.Integer()
+    score=fields.Integer()
+    answer_id=fields.Integer()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
-    last_updated_by = fields.Str()

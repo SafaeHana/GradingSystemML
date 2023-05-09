@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Answer } from '../interfaces/answer';
+import { Answer } from '../interfaces/answer.model';
 import { API_URL } from 'src/env';
 
 @Injectable({
@@ -13,9 +13,10 @@ export class AnswerService {
  
   constructor(private http: HttpClient) { }
 
-  submitAnswers(answers: Answer[]): Observable<any> {
-    return this.http.post<any>(this.submitAnswersUrl, answers);
+  submitAnswers(answer: Answer): Observable<any> {
+    return this.http.post<any>(this.submitAnswersUrl, answer);
   }
+ 
   fetchAnswers(): Observable<Answer[]> {
     return this.http.get<Answer[]>(this.fetchAnswersUrl);
   }

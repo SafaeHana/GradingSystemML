@@ -21,41 +21,36 @@
           </ol>
 
           <h4 class=" text-success fs-3 ">All The Best </h4>
-          <button type="submit" class="btn btn-primary btn-lg px-1 mt-1  " (click)="startQuiz()">Start</button>
+          <button type="submit" class="btn btn-primary btn-lg px-1 mt-1" (click)=" startQuiz();fetchQuestions()">Start</button>
         </div>
         </div>
       </div>
     </div>
   </div>
-  <!---------------------------------------------Test Section ------------------------------------------------------------------>
-<div class="d-flex justify-content-center align-items-center custom-height">
-    <div class="container-fluid">
-      <div class="row justify-content-center"> 
-      
-        <div class="col-md-9" *ngIf="isTestVisible">
-          
-          <div class="card card-margin  my-3 px-4">
-            <form action="POST" (ngSubmit) = "submitAnswer()">
-            
+  <!---------------------------------------------Test Section *ngFor="let question of questions ------------------------------------------------------------------>
+  <div class="col-md-9" *ngIf="isTestVisible">
+    <form (ngSubmit)="submitAnswer()">
+        <div class="card card-margin  my-3 px-4">
             <div class="form-group">
-              <label class=" mt-4 mb-4 fs-3 text-primary bg-light">Question {{ currentQuestionIndex + 1 }}: {{ currentQuestion.text }}</label>
-              <textarea class="form-control mb-4 fs-3 " id="text-input" [(ngModel)]="currentAnswer.text_answer" rows="3"></textarea>
+                <label class=" mt-4 mb-4 fs-3 text-primary bg-light" dir="rtl">السؤال {{ currentQuestionIndex + 1 }}: {{ currentQuestion.text_question }}؟ </label>
+                <textarea class="form-control mb-4 fs-3 "type="text" name="text_answer"  [(ngModel)]="currentAnswer.text_answer" rows="3" dir="rtl"></textarea>
             </div>
-            </form>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg px-3 float-right " (click)="submitAnswer()">Next Question</button>
+            <button type="submit" class="btn btn-primary btn-lg px-3 float-right">السؤال التالي</button>
         </div>
+    </form>
+</div>
+
+
+
 <!-----------------------------------------------Finished Test -------------------------------------------------------------------------->
         <div *ngIf="isFinished" class="mt-5 text-center">
           <div class="alert alert-info mb-3 mt-3 py-5 " role="alert">
             <h2 class="mb-3 text-danger">Congratulations, you have finished the test!</h2> 
            
             <p class="lead mb-5">Click the button below to view your score and answers.</p>
-            <button class="btn btn-light px-3 fs-5" (click)="finishTest()" [routerLink]="['/review']">View Score and Answers <i class="fas fa-clipboard-check"></i></button>
+            <button class="btn btn-light px-3 fs-5" [routerLink]="['/review']">View Score and Answers <i class="fas fa-clipboard-check"></i></button>
             
         </div>
 
       </div>
     </div>
-  </div>
-  

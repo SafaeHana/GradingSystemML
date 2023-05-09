@@ -3,9 +3,10 @@ import { AnswerService } from '../question-section/answer-service';
 import { GradeService } from '../question-section/grade-service';
 import { QuestionService } from '../question-section/question-service';
 import { ActivatedRoute } from '@angular/router';
-import { Answer } from '../interfaces/answer';
-import { Grade } from '../interfaces/grade';
-import { Question } from '../interfaces/question';
+import { Answer } from '../interfaces/answer.model';
+import { Grade } from '../interfaces/grade.model';
+import { Question } from '../interfaces/student.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-review',
@@ -14,10 +15,11 @@ import { Question } from '../interfaces/question';
 })
 export class ReviewComponent {
 
-  answers: Answer[] = [];
-  grades: Grade[] = [];
-  questions: Question[] = [];
+  answers!: Answer[] ;
+  grades!: Grade[] ;
+  questions!: Question[] ;
   totalScore = 0;
+  moy=this.totalScore/10;
   
   constructor(
     private answerService: AnswerService,
@@ -56,7 +58,7 @@ export class ReviewComponent {
   }
 
   getAnswerText(answerId: number): string {
-    return this.answers.find(answer => answer.answerId === answerId)?.text_answer || '';
+    return this.answers.find(answer => answer._id === answerId)?.text_answer || '';
   }
   
 }

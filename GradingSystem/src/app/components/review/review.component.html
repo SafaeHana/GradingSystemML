@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <h1 class="text-center mb- text-danger">تقييم الاختبار</h1>
+    
+    <p class="text-right fs-3  ms-5 float-right align-items-center"><strong> المعدل :  </strong> <span class="text-right fs-3 text-success float-right align-items-center"><strong>  {{ moy }}</strong></span>
+    </p>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          
+          
+          <th class="text-center">الدرجة</th>
+          <th class="text-center">الإجابة</th>
+          <th class="text-center">السؤال</th>
+          <th class="text-center"> رقم السؤال  </th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let answer of answers ;let i = index" >
+          <!--<td>{{ getScore(answer._id)}} </td>!-->
+        <td>{{ grades[i].score }}</td>
+        <td>{{ answer.text_answer }}</td>
+        <td>{{ getQuestionText(answer.question_id) }}</td>
+        <td>{{ answer.question_id }}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+          
+         
+        
+      
+  </div>
+
+
+
+
+
+
+
+
+<!--<tr *ngFor="let grade of grades">
+          <ng-container *ngFor="let answer of answers">
+           
+              <td>{{ getQuestionText(answer.question_id) }}</td>
+              <td>{{ getAnswerText(grade.answerId) }}</td>
+               <td>{{ grade.score }}</td>
+           
+          </ng-container>-->

@@ -3,6 +3,7 @@ export class Grade {
       public   id : number,
       public score : number,
       public  answer_id : number,
+      public  student_id : number,
       public created_at ? : Date,
       public updated_at?: Date
     ) { }

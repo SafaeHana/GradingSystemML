@@ -13,6 +13,7 @@ class Answer(Entity, Base):
     __tablename__ = 'answers'
     id = Column(Integer, primary_key=True)
     text_answer = Column(String(255))
+    # les relations
     question_id = Column(Integer, ForeignKey('questions.id'))
     student_id = Column(Integer, ForeignKey('students.id'))
     grades = relationship("Grade", backref="answers")

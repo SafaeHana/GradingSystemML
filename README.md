@@ -16,11 +16,11 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 - Flask 
 - SQLAlchemy 
 - MYSQL
-## Installation
+## Installation Backen
 #### Clonez le dépôt du projet depuis GitHub :
 git clone https://github.com/SafaeHana/GradingSystemML.git
 #### Accédez au répertoire du projet :
-cd nom-du-projet
+cd backend_Flask2
 #### Créez un environnement virtuel :
 python -m venv myvenv
 #### Activez l'environnement virtuel :

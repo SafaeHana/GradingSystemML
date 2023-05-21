@@ -1,7 +1,7 @@
 # Système automatisé de notation de réponses courtes en arabe pour l'histoire marocaine
 ## Description du projet
 Le projet consiste à développer un système automatisé de notation de réponses courtes en arabe pour l'histoire marocaine. L'objectif de ce système est de donner une note adéquate aux étudiants en fonction de leurs réponses. Le système doit être en arabe et nous allons préparer notre propre ensemble de données.
-### Le projet sera réalisé en suivant les étapes suivantes :
+### Le projet est réalisé en suivant les étapes suivantes :
 
 - Scraping des données à partir de différentes sources : sites web arabes, ensembles de données, livres, etc.
 - Mise en place d'un pipeline de traitement du langage naturel en arabe.

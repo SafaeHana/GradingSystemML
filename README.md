@@ -18,7 +18,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 - MYSQL
 ## Installation
 #### Clonez le dépôt du projet depuis GitHub :
-git clone https://github.com/votre-utilisateur/nom-du-projet.git
+git clone https://github.com/SafaeHana/GradingSystemML.git
 #### Accédez au répertoire du projet :
 cd nom-du-projet
 #### Créez un environnement virtuel :

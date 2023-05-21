@@ -42,14 +42,13 @@ Vous pouvez maintenant utiliser l'application pour créer de nouvelles instances
 Structure du projet
 ## Installation FrontEnd(Angular)
 #### Assurez-vous d'avoir Node.js installé sur votre système. 
-Vous pouvez le télécharger à partir du site officiel de Node.js : https://nodejs.org
-
-Accédez au répertoire de la SPA dans le projet :
+##### Vous pouvez le télécharger à partir du site officiel de Node.js : https://nodejs.org
+###### Accédez au répertoire de la SPA dans le projet :
 cd GradingSystem
 #### Installez les dépendances de la SPA en exécutant la commande suivante :
 npm install
-Une fois l'installation terminée, vous pouvez construire la SPA en exécutant la commande suivante :
+###### Une fois l'installation terminée, vous pouvez construire la SPA en exécutant la commande suivante :
 npm run build
 ### Contributions
-Safae Mazozi & Ouidad Oualhaj 
+Safae Mazozi & Ouidad Oualhaj \n
 made with love 

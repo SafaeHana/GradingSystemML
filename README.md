@@ -50,5 +50,4 @@ npm install
 ###### Une fois l'installation terminée, vous pouvez construire la SPA en exécutant la commande suivante :
 npm run build
 ### Contributions
-Safae Mazozi & Ouidad Oualhaj \n
-made with love 
+Safae Mazozi & Ouidad Oualhaj
